@@ -1,2 +1,2 @@
-# project-vuejs
-Redesign of a small front project in vuejs
+# vuejs-redesign
+Redesign of a small front project in VueJS
