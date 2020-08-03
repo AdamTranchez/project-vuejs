@@ -22,15 +22,25 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </b-col>
       </b-row>
+      <b-row>
+        <b-col sm="12">
+          <ProgressBar />
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
 
 <script>
+import ProgressBar from "./ProgressBar";
+
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
+  },
+  components: {
+    ProgressBar,
   },
 };
 </script>
