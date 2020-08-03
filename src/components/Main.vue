@@ -1,9 +1,10 @@
 <template>
-  <div class="hello">
+  <div class="main">
     <h1>{{ msg }}</h1>
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6">
+          <bar-chart-icon size="1.5x" class="custom-class"></bar-chart-icon>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -27,20 +28,29 @@
           <ProgressBar />
         </b-col>
       </b-row>
+      <b-row>
+        <b-col sm="12">
+          <Slider />
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
 
 <script>
 import ProgressBar from "./ProgressBar";
+import Slider from "./Slider";
+import { BarChartIcon } from 'vue-feather-icons';
 
 export default {
-  name: "HelloWorld",
+  name: "Main",
   props: {
     msg: String,
   },
   components: {
     ProgressBar,
+    Slider,
+    BarChartIcon,
   },
 };
 </script>
