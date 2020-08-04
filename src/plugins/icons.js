@@ -1,7 +1,7 @@
 import Vue from "vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDay, faRocket } from "@fortawesome/free-solid-svg-icons";
 
 import MessageReplyTextIcon from "vue-material-design-icons/MessageReplyText.vue";
 
@@ -10,7 +10,7 @@ import { HeartIcon } from "vue-feather-icons";
 import { XIcon } from "vue-feather-icons";
 import { TrendingUpIcon } from "vue-feather-icons";
 
-library.add(faCalendarDay);
+library.add(faCalendarDay, faRocket);
 
 /**
  * Font Awesome Icons

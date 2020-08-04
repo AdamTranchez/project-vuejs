@@ -5,7 +5,6 @@
       <b-row>
         <b-col sm="6">
           <fa-icon :icon="['fas', 'calendar-day']" />
-          <bar-chart-icon size="1.5x" class="custom-class"></bar-chart-icon>
           <heart-icon size="1.5x" class="custom-class"></heart-icon>
           <x-icon size="1.5x" class="custom-class"></x-icon>
           <trending-up-icon size="1.5x" class="custom-class"></trending-up-icon>
