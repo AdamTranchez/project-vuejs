@@ -4,7 +4,12 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6">
+          <fa-icon :icon="['fas', 'calendar-day']" />
           <bar-chart-icon size="1.5x" class="custom-class"></bar-chart-icon>
+          <heart-icon size="1.5x" class="custom-class"></heart-icon>
+          <x-icon size="1.5x" class="custom-class"></x-icon>
+          <trending-up-icon size="1.5x" class="custom-class"></trending-up-icon>
+          <message-reply-text-icon />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -40,7 +45,6 @@
 <script>
 import ProgressBar from "./ProgressBar";
 import Slider from "./Slider";
-import { BarChartIcon } from 'vue-feather-icons';
 
 export default {
   name: "Main",
@@ -50,7 +54,6 @@ export default {
   components: {
     ProgressBar,
     Slider,
-    BarChartIcon,
   },
 };
 </script>
