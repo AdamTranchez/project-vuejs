@@ -1,5 +1,8 @@
 <template>
   <footer>
+    <div class="slogan">
+      Enjoy !
+    </div>
   </footer>
 </template>
 
@@ -10,8 +13,18 @@ export default {
 </script>
 
 <style lang="scss" scope>
+@import "../../styles/variables.scss";
+
 footer {
-    height: 100px;
-    background-color: green;
+  background-color: $light;
+  height: 100px;
+  .slogan {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    color: $orange;
+    padding-top: 30px;
+    text-align: center;
+  }
 }
 </style>

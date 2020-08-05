@@ -5,9 +5,8 @@
       <b-row>
         <b-col sm="6">
           <fa-icon :icon="['fas', 'calendar-day']" />
-          <heart-icon size="1.5x" class="custom-class"></heart-icon>
-          <x-icon size="1.5x" class="custom-class"></x-icon>
-          <trending-up-icon size="1.5x" class="custom-class"></trending-up-icon>
+          <heart-icon size="1.5x" class="custom-class" />
+          <trending-up-icon size="1.5x" class="custom-class" />
           <message-reply-text-icon />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -32,18 +31,18 @@
           <ProgressBar />
         </b-col>
       </b-row>
-      <b-row>
+      <!--<b-row>
         <b-col sm="12">
           <Slider />
         </b-col>
-      </b-row>
+      </b-row>-->
     </b-container>
   </div>
 </template>
 
 <script>
 import ProgressBar from "./ProgressBar";
-import Slider from "./Slider";
+/* import Slider from "./Slider"; */
 
 export default {
   name: "Main",
@@ -52,7 +51,7 @@ export default {
   },
   components: {
     ProgressBar,
-    Slider,
+    /* Slider, */
   },
 };
 </script>
