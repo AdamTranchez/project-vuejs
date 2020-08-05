@@ -31,14 +31,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+@import "../styles/variables.scss";
+
 .percentage-number {
-  font-size: 8rem;
-  color: #555;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .loading-bar {
+  background-color: $lightGrey;
   position: relative;
-  height: 30px;
+  height: 20px;
   border-radius: 15px;
   overflow: hidden;
   border-bottom: 1px solid #ddd;
@@ -53,7 +57,7 @@ export default {
     display: block;
     height: 100%;
     border-radius: 15px;
-    background-color: #a5df41;
+    background-color: $orange;
     background-size: 30px 30px;
     background-image: linear-gradient(
       135deg,

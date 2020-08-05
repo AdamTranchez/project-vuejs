@@ -4,7 +4,7 @@
       <b-navbar class="nav">
         <b-container>
           <div class="logo-navbar">
-            <fa-icon :icon="['fas', 'rocket']" size="3x" />
+            <fa-icon id="rocket-icon" :icon="['fas', 'rocket']" />
           </div>
           <div class="menu" @click="showNav">
             <bar-chart-icon id="menu-icon" class="custom-class" />
@@ -76,6 +76,9 @@ header {
 
       .logo-navbar {
         color: $orange;
+        #rocket-icon {
+          font-size: 48px;
+        }
       }
 
       #menu-icon {
