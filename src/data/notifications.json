@@ -1,0 +1,9 @@
+{
+  "notifications": {
+    "id": 0,
+    "event": "Un événement",
+    "favorite": "Un favori",
+    "message": "Un message",
+    "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+  }
+}
