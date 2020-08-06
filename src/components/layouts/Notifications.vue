@@ -1,44 +1,59 @@
 <template>
   <b-col lg="3" class="notification">
-    <div id="notification-block-1">
-      <b-row>
-        <div class="notification-title title">Un événement</div>
-        <fa-icon
-          id="calendar-icon"
-          class="notification-icon"
-          :icon="['fas', 'calendar-day']"
-        />
-      </b-row>
-      <b-col cols="10" class="notification-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-      </b-col>
-    </div>
-    <div id="notification-block-2">
-      <b-row>
-        <div class="notification-title title">Un favori</div>
-        <div class="heart-icon">
-          <heart-icon id="heart-icon" class="notification-icon custom-class" />
-        </div>
-      </b-row>
-      <b-col cols="10" class="notification-text">
-        Lorem ipsum dolor sit amet consectetur.
-      </b-col>
-    </div>
-    <div id="notification-block-3">
-      <b-row>
-        <div class="notification-title title">Un message</div>
-        <message-reply-text-icon id="comment-icon" class="notification-icon" />
-      </b-row>
-      <b-col cols="10" class="notification-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-      </b-col>
+    <div v-for="data in text" :key="data.id">
+      <div class="notification-block-1">
+        <b-row>
+          <div class="notification-title title">{{ data.event }}</div>
+          <fa-icon
+            id="calendar-icon"
+            class="notification-icon"
+            :icon="['fas', 'calendar-day']"
+          />
+        </b-row>
+        <b-col cols="10" class="notification-text">
+          {{ data.text }}
+        </b-col>
+      </div>
+      <div class="notification-block-2">
+        <b-row>
+          <div class="notification-title title">{{ data.favorite }}</div>
+          <div class="heart-icon">
+            <heart-icon
+              id="heart-icon"
+              class="notification-icon custom-class"
+            />
+          </div>
+        </b-row>
+        <b-col cols="10" class="notification-text">
+          {{ data.text }}
+        </b-col>
+      </div>
+      <div class="notification-block-3">
+        <b-row>
+          <div class="notification-title title">{{ data.message }}</div>
+          <message-reply-text-icon
+            id="comment-icon"
+            class="notification-icon"
+          />
+        </b-row>
+        <b-col cols="10" class="notification-text">
+          {{ data.text }}
+        </b-col>
+      </div>
     </div>
   </b-col>
 </template>
 
 <script>
+import textJson from "../../data/notifications.json";
+
 export default {
   name: "Notifications",
+  data() {
+    return {
+      text: textJson,
+    };
+  },
 };
 </script>
 
@@ -52,20 +67,20 @@ export default {
     margin: auto;
   }
 
-  #notification-block-1 {
+  &-block-1 {
     background-color: $brown;
   }
-  #notification-block-2 {
+  &-block-2 {
     background-color: $orange;
   }
-  #notification-block-3 {
+  &-block-3 {
     background-color: $green;
   }
-  .notification-title {
+  &-title {
     color: $white;
     padding: 15px 20px 15px 35px;
   }
-  .notification-icon {
+  &-icon {
     color: $white;
   }
   #calendar-icon {
@@ -103,7 +118,7 @@ export default {
       margin-left: 165px;
     }
   }
-  .notification-text {
+  &-text {
     color: $white;
     padding: 0px 5px 20px 20px;
   }

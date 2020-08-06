@@ -1,34 +1,36 @@
 <template>
   <header>
-    <div class="wrapper">
-      <b-navbar class="nav">
-        <b-container>
-          <div class="logo-navbar">
-            <fa-icon id="rocket-icon" :icon="['fas', 'rocket']" />
-          </div>
-          <div class="menu" @click="showNav">
-            <bar-chart-icon id="menu-icon" class="custom-class" />
-          </div>
-        </b-container>
-      </b-navbar>
+    <div v-for="data in text" :key="data.id">
+      <div class="wrapper">
+        <b-navbar class="nav">
+          <b-container>
+            <div class="logo-navbar">
+              <fa-icon id="rocket-icon" :icon="['fas', 'rocket']" />
+            </div>
+            <div class="menu" @click="showNav">
+              <bar-chart-icon id="menu-icon" class="custom-class" />
+            </div>
+          </b-container>
+        </b-navbar>
 
-      <!-- Sidebar -->
-      <div class="sidebar" :class="{ show: showSidebar }">
-        <div class="sidebar-content" v-show="showLink">
-          <div class="sidebar-close" @click="showNav">
-            <x-icon size="1.5x" class="cross custom-class" />
-          </div>
-          <div class="sidebar-text">
-            <div class="sidebar-list">
-              <div class="title sidebar-title h3">One link</div>
-              <div class="sidebar-link"><a href="#">Link lorem 1</a></div>
-              <div class="sidebar-link"><a href="#">Link ipsum 2</a></div>
+        <!-- Sidebar -->
+        <div class="sidebar" :class="{ show: showSidebar }">
+          <div class="sidebar-content" v-show="showLink">
+            <div class="sidebar-close" @click="showNav">
+              <x-icon size="1.5x" class="cross custom-class" />
             </div>
-            <div class="sidebar-list">
-              <div class="title sidebar-title h3">Two links</div>
-            </div>
-            <div class="sidebar-list">
-              <div class="title sidebar-title h3">Three links</div>
+            <div class="sidebar-text">
+              <div class="sidebar-text-list">
+                <div class="title sidebar-text-list-title h3">{{ data.one }}</div>
+                <div class="sidebar-text-list-link"><a href="#">{{ data.link_1 }}</a></div>
+                <div class="sidebar-text-list-link"><a href="#">{{ data.link_2 }}</a></div>
+              </div>
+              <div class="sidebar-text-list">
+                <div class="title sidebar-text-list-title h3">{{ data.two }}</div>
+              </div>
+              <div class="sidebar-text-list">
+                <div class="title sidebar-text-list-title h3">{{ data.three }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -38,10 +40,13 @@
 </template>
 
 <script>
+import textJson from "../../data/header.json";
+
 export default {
   name: "Header",
   data: () => {
     return {
+      text: textJson,
       showSidebar: false,
       showLink: false,
     };
@@ -100,9 +105,9 @@ header {
       background: black;
       transition: 0.5s;
       height: 100vh;
-      z-index: 1;
+      z-index: 25;
       color: $white;
-      .sidebar-close {
+      &-close {
         padding: 30px 30px 0 0;
         .cross {
           float: right;
@@ -110,14 +115,14 @@ header {
           height: 32px;
         }
       }
-      .sidebar-text {
+      &-text {
         padding: 160px 0 0 80px;
-        .sidebar-list {
-          .sidebar-title {
+        &-list {
+          &-title {
             padding-top: 10px;
             font-style: italic;
           }
-          .sidebar-link {
+          &-link {
             font-family: "Semi-bold";
             padding: 10px 0 5px 0;
             a {

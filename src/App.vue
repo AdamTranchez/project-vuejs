@@ -40,7 +40,7 @@ export default {
 
   .content {
     padding-top: 70px;
-    padding-bottom: 50px;
+    padding-bottom: 200px;
   }
 }
 </style>

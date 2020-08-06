@@ -1,73 +1,72 @@
 <template>
   <div class="slider">
-    <b-carousel
-      id="carousel-1"
-      v-model="slide"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1024"
-      img-height="480"
-      style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-      <!-- Text slides with image -->
-      <b-carousel-slide
-        caption="First slide"
-        text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://picsum.photos/1024/480/?image=52"
-      ></b-carousel-slide>
-
-      <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
-      </b-carousel-slide>
-
-      <!-- Slides with image only -->
-      <b-carousel-slide
-        img-src="https://picsum.photos/1024/480/?image=58"
-      ></b-carousel-slide>
-
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <b-carousel-slide>
-        <template v-slot:img>
-          <img
-            class="d-block img-fluid w-100"
-            width="1024"
-            height="480"
-            src="https://picsum.photos/1024/480/?image=55"
-            alt="image slot"
-          />
-        </template>
-      </b-carousel-slide>
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          eros felis, tincidunt a tincidunt eget, convallis vel est. Ut
-          pellentesque ut lacus vel interdum.
-        </p>
-      </b-carousel-slide>
-    </b-carousel>
+    <div v-for="data in text" :key="data.id">
+      <div class="static-banner title">
+        {{ data.static_banner }}
+      </div>
+      <b-carousel v-model="slide" :interval="3000" indicators>
+        <b-carousel-slide img-src="./../assets/img/stormtrooper.jpeg">
+        </b-carousel-slide>
+        <b-carousel-slide img-src="./../assets/img/stormtrooper.jpeg">
+        </b-carousel-slide>
+        <b-carousel-slide img-src="./../assets/img/stormtrooper.jpeg">
+        </b-carousel-slide>
+      </b-carousel>
+    </div>
   </div>
 </template>
 
 <script>
+import textJson from "../data/main.json";
+
 export default {
   name: "Slider",
-
   data() {
     return {
-      slide: 0,
-      sliding: null,
+      text: textJson,
     };
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss"></style>
+<style lang="scss">
+@import "../styles/variables.scss";
+
+.carousel-indicators {
+  z-index: 1;
+}
+
+.static-banner {
+  position: absolute;
+  background: hsla(0, 0%, 0%, 0.3);
+  @media (min-width: 801px) {
+    width: 94%;
+  }
+  @media (max-width: 800px) {
+    width: 96%;
+  }
+  @media (max-width: 420px) {
+    width: 92%;
+  }
+  height: 100%;
+  font-size: 38px;
+  color: white;
+  padding-top: 42%;
+  text-align: center;
+  z-index: 1;
+}
+
+.carousel-indicators li {
+  margin-right: 12px;
+  background: $light;
+  opacity: 1;
+  width: 24px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.carousel-indicators li.active {
+  background: $orange;
+}
+</style>

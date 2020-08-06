@@ -45,9 +45,6 @@ export default {
   height: 20px;
   border-radius: 15px;
   overflow: hidden;
-  border-bottom: 1px solid #ddd;
-  box-shadow: inset 0 1px 2px rgba($color: #000, $alpha: 0.4), 0 -1px 1px #fff,
-    0 1px 0 #fff;
 
   .percentage {
     position: absolute;
