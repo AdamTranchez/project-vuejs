@@ -1,5 +1,8 @@
 # vuejs-redesign
 
+## View project
+https://vuejs-redesign.herokuapp.com/
+
 ## Project setup
 ```
 npm install
